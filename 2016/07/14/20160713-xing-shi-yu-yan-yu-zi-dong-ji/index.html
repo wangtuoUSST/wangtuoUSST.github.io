@@ -87,10 +87,10 @@
 <meta name="description" content="宗成庆统计自然语言处理第三章：形式语言与自动机基本概念：有向图，无向图，连通图，回路（开始和终结于统一定点的通路），树（无回路无向图为称为森林，无回路连通无向图称为树），字符表（字符的有限集合），字符串（字符表中字符的有限序列），字符串连接（x=abc,y=cba,xy=abccba），符号串集合乘积（集合内容各字符串分别连接得到的新集合），闭包运算: 对字符表 $\Sigma$上符号串集合V的闭">
 <meta property="og:type" content="article">
 <meta property="og:title" content="形式语言与自动机">
-<meta property="og:url" content="http://yoursite.com/2016/07/13/20160713-xing-shi-yu-yan-yu-zi-dong-ji/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/07/14/20160713-xing-shi-yu-yan-yu-zi-dong-ji/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
 <meta property="og:description" content="宗成庆统计自然语言处理第三章：形式语言与自动机基本概念：有向图，无向图，连通图，回路（开始和终结于统一定点的通路），树（无回路无向图为称为森林，无回路连通无向图称为树），字符表（字符的有限集合），字符串（字符表中字符的有限序列），字符串连接（x=abc,y=cba,xy=abccba），符号串集合乘积（集合内容各字符串分别连接得到的新集合），闭包运算: 对字符表 $\Sigma$上符号串集合V的闭">
-<meta property="og:updated_time" content="2016-07-13T12:19:10.975Z">
+<meta property="og:updated_time" content="2016-07-14T07:20:53.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="形式语言与自动机">
 <meta name="twitter:description" content="宗成庆统计自然语言处理第三章：形式语言与自动机基本概念：有向图，无向图，连通图，回路（开始和终结于统一定点的通路），树（无回路无向图为称为森林，无回路连通无向图称为树），字符表（字符的有限集合），字符串（字符表中字符的有限序列），字符串连接（x=abc,y=cba,xy=abccba），符号串集合乘积（集合内容各字符串分别连接得到的新集合），闭包运算: 对字符表 $\Sigma$上符号串集合V的闭">
@@ -114,7 +114,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/13/20160713-xing-shi-yu-yan-yu-zi-dong-ji/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/14/20160713-xing-shi-yu-yan-yu-zi-dong-ji/"/>
 
   <title> 形式语言与自动机 | 机器学习及自然语言处理 </title>
 </head>
@@ -248,8 +248,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-13T20:16:29+08:00" content="2016-07-13">
-              2016-07-13
+            <time itemprop="dateCreated" datetime="2016-07-14T15:25:29+08:00" content="2016-07-14">
+              2016-07-14
             </time>
           </span>
 
@@ -297,7 +297,20 @@
       
         <h2 id="宗成庆统计自然语言处理"><a href="#宗成庆统计自然语言处理" class="headerlink" title="宗成庆统计自然语言处理"></a>宗成庆统计自然语言处理</h2><h3 id="第三章：形式语言与自动机"><a href="#第三章：形式语言与自动机" class="headerlink" title="第三章：形式语言与自动机"></a>第三章：形式语言与自动机</h3><h4 id="基本概念："><a href="#基本概念：" class="headerlink" title="基本概念："></a>基本概念：</h4><p>有向图，无向图，连通图，<br>回路（开始和终结于统一定点的通路），<br>树（无回路无向图为称为森林，无回路连通无向图称为树），<br>字符表（字符的有限集合），字符串（字符表中字符的有限序列），<br>字符串连接（x=abc,y=cba,xy=abccba），符号串集合乘积（集合内容各字符串分别连接得到的新集合），<br>闭包运算: 对字符表 $\Sigma$上符号串集合V的闭包定义为 $V^* =V^0 \cup V^1 \cup V^2 …  ,V^+ =V^1 \cup V^2 \cup V^3 … $</p>
 <h4 id="形式语言"><a href="#形式语言" class="headerlink" title="形式语言"></a>形式语言</h4><p>描述语言途径：穷举法，文法（产生式系统）描述：语言中的每个语句用严格定义的规则来构造，利用规则生成语言中合法的句子，自动机法：对输入的句子进行合法性检验。</p>
+<ul>
+<li><p><strong>文法描述</strong></p>
 <p>形式语法：形式语法用于精确描述语言及其结构，为四元组 $G=(N,\Sigma,,P,S)$,N是非终结符的有限集合$\Sigma$为终结符的有限集合，二者之和为总词汇表，P是重写规则（比如大小写？），$S\in N$是句子符或初始符</p>
+<p><strong>最左推导，最右推导，正则文法，上下无关文法，上下有关文法，无约束文法，分别代表了不同的语句生成规则，大致理解了但不知道有什么用，标记一下</strong></p>
+</li>
+<li><p><strong>自动机理论</strong></p>
+<p>自动机：理想化机器，科学定义的演算机器。可分有限自动机，下推自动机，线性界限自动机，图灵机。<br>有限自动机：确定性有限自动机（DFA)与不确定有限自动机（NFA)，个人理解其大致功能是给定一个输入，依据一套规则（映射）给出输出，如果输出在一个有限的，已知的，固定的范围内，就称这门语言被该自动机识别，确定与不确定的区别在于输出，输出是一个集合则是不确定有限自动机。<br>个人理解，，人的文字识别这个功能抽象出来就是DFA，比如中国人，非文盲，看到一个“哦”字图形就能把它和汉语中“哦”字字符唯一对应起来，如果看到一个不知名非洲部落土著文字，尽管接受了输入，但并没有得到在给定范围（汉语）内的输出，那么就称这门语言（非洲某部落语）未被该DFA（汉语识字功能）识别。<br>同理，听力可看做NFA，因为听到个“ha”不知道是“哈”还是“蛤”，但是是在一个有限的集合内的（同音字数量有限）。</p>
+<p>下推自动机，多了个储存器，根据输入改变储存器内符号状态。没想到有啥对应的东西。不过如果储存器内储存的不是符号而是位置信息，是否可以参照下推自动机做个算法出来改进翻译功能呢？毕竟现在对单词的翻译还是比较不错的，但是整句读起来就颠三倒四完全不通了。</p>
+<p><strong>图灵机，没太看懂，标记一下</strong><br>线性界限自动机是一个确定的单带图灵机</p>
+</li>
+<li><p><strong>自动机在自然语言处理中的应用</strong><br> 单词拼写检查<br> 单词形态分析<br> 词性消歧</p>
+</li>
+</ul>
+<p>。。。感觉这些方法的思路都比较机械比较程序式啊，其实实际应用的话不必采用这种严格的规则，不用保证绝对正确（也不可能绝对正确即使人工设立规则），只要根据数据生成概率密度函数，根据概率来判断差不多就行了吧。使用自动机的框架和思路，但是里面的规则换成根据概率来判断？好像可行。不过在遇到冷启动问题时，这样的方法倒也有优势。</p>
 
       
     </div>
@@ -323,17 +336,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/13/20160713-deep-learning-review/" rel="next" title="神经网络中的深度学习：综述| Deep Learning in Neural Networks: An Overview">
-                <i class="fa fa-chevron-left"></i> 神经网络中的深度学习：综述| Deep Learning in Neural Networks: An Overview
+              <a href="/2016/07/13/20160713-leetcode/" rel="next" title="leetcode刷题记录1">
+                <i class="fa fa-chevron-left"></i> leetcode刷题记录1
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/13/20160713-leetcode/" rel="prev" title="leetcode刷题记录1">
-                leetcode刷题记录1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
