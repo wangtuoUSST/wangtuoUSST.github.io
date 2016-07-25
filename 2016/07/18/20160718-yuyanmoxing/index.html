@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="想到啥就写啥">
-<meta property="og:type" content="website">
-<meta property="og:title" content="机器学习及自然语言处理">
-<meta property="og:url" content="http://yoursite.com/categories/nlp/index.html">
+<meta name="description" content="宗成庆统计自然语言处理第五章：语言模型基本概念n元语法（n-gram model)，交叉熵，困惑度平滑法：加法平滑法，古德-图灵平滑法，Katz平滑方法。。。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="语言模型">
+<meta property="og:url" content="http://yoursite.com/2016/07/18/20160718-yuyanmoxing/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
-<meta property="og:description" content="想到啥就写啥">
+<meta property="og:description" content="宗成庆统计自然语言处理第五章：语言模型基本概念n元语法（n-gram model)，交叉熵，困惑度平滑法：加法平滑法，古德-图灵平滑法，Katz平滑方法。。。。。">
+<meta property="og:updated_time" content="2016-07-18T08:49:41.591Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习及自然语言处理">
-<meta name="twitter:description" content="想到啥就写啥">
+<meta name="twitter:title" content="语言模型">
+<meta name="twitter:description" content="宗成庆统计自然语言处理第五章：语言模型基本概念n元语法（n-gram model)，交叉熵，困惑度平滑法：加法平滑法，古德-图灵平滑法，Katz平滑方法。。。。。">
 
 
 
@@ -113,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/nlp/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/18/20160718-yuyanmoxing/"/>
 
-  <title> 分类: nlp | 机器学习及自然语言处理 </title>
+  <title> 语言模型 | 机器学习及自然语言处理 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,103 +215,139 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        nlp
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/18/20160718-yuyanmoxing/" itemprop="url">
-              
-                <span itemprop="name">语言模型</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-18T17:25:29+08:00"
-              content="2016-07-18" >
-          07-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/14/20160714-lstm/" itemprop="url">
-              
-                <span itemprop="name">lstm</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-14T17:05:29+08:00"
-              content="2016-07-14" >
-          07-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/14/20160713-xing-shi-yu-yan-yu-zi-dong-ji/" itemprop="url">
-              
-                <span itemprop="name">形式语言与自动机</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-14T15:25:29+08:00"
-              content="2016-07-14" >
-          07-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                语言模型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-18T17:25:29+08:00" content="2016-07-18">
+              2016-07-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/nlp/" itemprop="url" rel="index">
+                    <span itemprop="name">nlp</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="宗成庆统计自然语言处理"><a href="#宗成庆统计自然语言处理" class="headerlink" title="宗成庆统计自然语言处理"></a>宗成庆统计自然语言处理</h2><h3 id="第五章：语言模型"><a href="#第五章：语言模型" class="headerlink" title="第五章：语言模型"></a>第五章：语言模型</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>n元语法（n-gram model)，交叉熵，困惑度<br>平滑法：加法平滑法，古德-图灵平滑法，Katz平滑方法。。。。。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/14/20160714-leetcode/" rel="next" title="leetcode刷题记录2">
+                <i class="fa fa-chevron-left"></i> leetcode刷题记录2
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/25/20160725-leetcode/" rel="prev" title="leetcode刷题记录3-7">
+                leetcode刷题记录3-7 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -318,6 +355,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -337,8 +378,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -401,6 +451,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#宗成庆统计自然语言处理"><span class="nav-number">1.</span> <span class="nav-text">宗成庆统计自然语言处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第五章：语言模型"><span class="nav-number">1.1.</span> <span class="nav-text">第五章：语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本概念</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -497,6 +558,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
