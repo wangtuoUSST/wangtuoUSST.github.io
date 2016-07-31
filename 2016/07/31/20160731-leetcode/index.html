@@ -84,22 +84,22 @@
 
 
 
-<meta name="description" content="介绍Related to question Excel Sheet Column Title
+<meta name="description" content="介绍9Related to question Excel Sheet Column Title
 Given a column title as appear in an Excel sheet, return its corresponding column number.
-For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA -">
+For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode刷题记录9">
+<meta property="og:title" content="leetcode刷题记录9-11">
 <meta property="og:url" content="http://yoursite.com/2016/07/31/20160731-leetcode/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
-<meta property="og:description" content="介绍Related to question Excel Sheet Column Title
+<meta property="og:description" content="介绍9Related to question Excel Sheet Column Title
 Given a column title as appear in an Excel sheet, return its corresponding column number.
-For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA -">
-<meta property="og:updated_time" content="2016-07-31T01:56:57.611Z">
+For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA">
+<meta property="og:updated_time" content="2016-07-31T03:05:45.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode刷题记录9">
-<meta name="twitter:description" content="介绍Related to question Excel Sheet Column Title
+<meta name="twitter:title" content="leetcode刷题记录9-11">
+<meta name="twitter:description" content="介绍9Related to question Excel Sheet Column Title
 Given a column title as appear in an Excel sheet, return its corresponding column number.
-For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA -">
+For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA">
 
 
 
@@ -122,7 +122,7 @@ For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA -"
 
   <link rel="canonical" href="http://yoursite.com/2016/07/31/20160731-leetcode/"/>
 
-  <title> leetcode刷题记录9 | 机器学习及自然语言处理 </title>
+  <title> leetcode刷题记录9-11 | 机器学习及自然语言处理 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +242,7 @@ For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA -"
             
             
               
-                leetcode刷题记录9
+                leetcode刷题记录9-11
               
             
           </h1>
@@ -254,7 +254,7 @@ For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA -"
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-31T09:55:29+08:00" content="2016-07-31">
+            <time itemprop="dateCreated" datetime="2016-07-31T10:55:29+08:00" content="2016-07-31">
               2016-07-31
             </time>
           </span>
@@ -301,12 +301,21 @@ For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA -"
       
 
       
-        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Related to question Excel Sheet Column Title</p>
+        <h3 id="介绍9"><a href="#介绍9" class="headerlink" title="介绍9"></a>介绍9</h3><p>Related to question Excel Sheet Column Title</p>
 <p>Given a column title as appear in an Excel sheet, return its corresponding column number.</p>
 <p>For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">A -&gt; 1</div><div class="line">B -&gt; 2</div><div class="line">C -&gt; 3</div><div class="line">...</div><div class="line">Z -&gt; 26</div><div class="line">AA -&gt; 27</div><div class="line">AB -&gt; 28</div></pre></td></tr></table></figure></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>利用python内置函数把字母转化为数字</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">titleToNumber</span><span class="params">(self, s)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        n=<span class="number">0</span></div><div class="line">        t=len(s)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</div><div class="line">            t=t<span class="number">-1</span></div><div class="line">            n=n+(ord(i)<span class="number">-64</span>)*<span class="number">26</span>**t</div><div class="line">        <span class="keyword">return</span> n</div></pre></td></tr></table></figure>
-
+<h3 id="思路9"><a href="#思路9" class="headerlink" title="思路9"></a>思路9</h3><p>利用python内置函数把字母转化为数字</p>
+<h3 id="代码9"><a href="#代码9" class="headerlink" title="代码9"></a>代码9</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">titleToNumber</span><span class="params">(self, s)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        n=<span class="number">0</span></div><div class="line">        t=len(s)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</div><div class="line">            t=t<span class="number">-1</span></div><div class="line">            n=n+(ord(i)<span class="number">-64</span>)*<span class="number">26</span>**t</div><div class="line">        <span class="keyword">return</span> n</div></pre></td></tr></table></figure>
+<h3 id="介绍10"><a href="#介绍10" class="headerlink" title="介绍10"></a>介绍10</h3><p>Given two strings s and t, write a function to determine if t is an anagram of s.</p>
+<p>For example,<br>s = “anagram”, t = “nagaram”, return true.<br>s = “rat”, t = “car”, return false.</p>
+<p>Note:<br>You may assume the string contains only lowercase alphabets.</p>
+<p>Follow up:<br>What if the inputs contain unicode characters? How would you adapt your solution to such case?</p>
+<h3 id="思路10"><a href="#思路10" class="headerlink" title="思路10"></a>思路10</h3><p>简单粗暴，既然差别只在于字母的顺序，那就统一重新排序好了</p>
+<h3 id="代码10"><a href="#代码10" class="headerlink" title="代码10"></a>代码10</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isAnagram</span><span class="params">(self, s, t)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :type t: str</div><div class="line">        :rtype: bool</div><div class="line">        """</div><div class="line">        s=list(s)</div><div class="line">        t=list(t)</div><div class="line">        s.sort()</div><div class="line">        t.sort()</div><div class="line">        <span class="keyword">return</span> s==t</div></pre></td></tr></table></figure>
+<h3 id="介绍11"><a href="#介绍11" class="headerlink" title="介绍11"></a>介绍11</h3><p>Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x &lt; 10n.</p>
+<p>Example:<br>Given n = 2, return 91. (The answer should be the total numbers in the range of 0 ≤ x &lt; 100, excluding [11,22,33,44,55,66,77,88,99])</p>
+<h3 id="思路11"><a href="#思路11" class="headerlink" title="思路11"></a>思路11</h3><p>找出递归规律就行了</p>
+<h3 id="代码11"><a href="#代码11" class="headerlink" title="代码11"></a>代码11</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countNumbersWithUniqueDigits</span><span class="params">(self, n)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type n: int</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        <span class="keyword">if</span> n==<span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span> <span class="number">1</span></div><div class="line">        <span class="keyword">elif</span> n==<span class="number">1</span>:</div><div class="line">            <span class="keyword">return</span> <span class="number">10</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            t=[<span class="number">9</span>-i <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>)]</div><div class="line">            t=[<span class="number">1</span>]+t</div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</div><div class="line">               <span class="keyword">if</span> i==<span class="number">0</span>:</div><div class="line">                  <span class="keyword">pass</span></div><div class="line">               <span class="keyword">else</span>:</div><div class="line">                  t[i]=t[i]*t[i<span class="number">-1</span>]</div><div class="line">            t=[<span class="number">9</span>*i <span class="keyword">for</span> i <span class="keyword">in</span> t]</div><div class="line">            t=[<span class="number">1</span>]+t</div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(n+<span class="number">1</span>):</div><div class="line">               <span class="keyword">if</span> i==<span class="number">0</span>:</div><div class="line">                  <span class="keyword">pass</span></div><div class="line">               <span class="keyword">else</span>:</div><div class="line">                  t[i]=t[i]+t[i<span class="number">-1</span>]</div><div class="line">            <span class="keyword">return</span> t[<span class="number">-1</span>]</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -464,7 +473,7 @@ For example:1234567A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3...Z -&amp;gt; 26AA -"
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍9"><span class="nav-number">1.</span> <span class="nav-text">介绍9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路9"><span class="nav-number">2.</span> <span class="nav-text">思路9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码9"><span class="nav-number">3.</span> <span class="nav-text">代码9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍10"><span class="nav-number">4.</span> <span class="nav-text">介绍10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路10"><span class="nav-number">5.</span> <span class="nav-text">思路10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码10"><span class="nav-number">6.</span> <span class="nav-text">代码10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍11"><span class="nav-number">7.</span> <span class="nav-text">介绍11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路11"><span class="nav-number">8.</span> <span class="nav-text">思路11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码11"><span class="nav-number">9.</span> <span class="nav-text">代码11</span></a></li></ol></div>
             
           </div>
         </section>
