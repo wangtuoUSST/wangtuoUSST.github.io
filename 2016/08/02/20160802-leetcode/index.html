@@ -84,25 +84,16 @@
 
 
 
-<meta name="description" content="关于Deep Learning in Neural Networks: An Overview的粗糙翻译和个人理解
-摘要：近年来，深度人工神经网络赢得了大量模式识别与机器学习方面的比赛。这篇历史考察简要地总结了神经网络的相关工作，其中很多内容来自2000年之前。学习的深浅依据其CAP的深度来区分，即行为与影响之间的可学习链和因果联系的深度
-停一下
-什么是CAP(credit assignment">
+<meta name="description" content="介绍13Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every elemen">
 <meta property="og:type" content="article">
-<meta property="og:title" content="神经网络中的深度学习：综述| Deep Learning in Neural Networks: An Overview">
-<meta property="og:url" content="http://yoursite.com/2016/07/13/20160713-deep-learning-review/index.html">
+<meta property="og:title" content="leetcode刷题记录13-14">
+<meta property="og:url" content="http://yoursite.com/2016/08/02/20160802-leetcode/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
-<meta property="og:description" content="关于Deep Learning in Neural Networks: An Overview的粗糙翻译和个人理解
-摘要：近年来，深度人工神经网络赢得了大量模式识别与机器学习方面的比赛。这篇历史考察简要地总结了神经网络的相关工作，其中很多内容来自2000年之前。学习的深浅依据其CAP的深度来区分，即行为与影响之间的可学习链和因果联系的深度
-停一下
-什么是CAP(credit assignment">
-<meta property="og:updated_time" content="2016-07-13T08:26:44.849Z">
+<meta property="og:description" content="介绍13Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every elemen">
+<meta property="og:updated_time" content="2016-08-05T03:27:42.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="神经网络中的深度学习：综述| Deep Learning in Neural Networks: An Overview">
-<meta name="twitter:description" content="关于Deep Learning in Neural Networks: An Overview的粗糙翻译和个人理解
-摘要：近年来，深度人工神经网络赢得了大量模式识别与机器学习方面的比赛。这篇历史考察简要地总结了神经网络的相关工作，其中很多内容来自2000年之前。学习的深浅依据其CAP的深度来区分，即行为与影响之间的可学习链和因果联系的深度
-停一下
-什么是CAP(credit assignment">
+<meta name="twitter:title" content="leetcode刷题记录13-14">
+<meta name="twitter:description" content="介绍13Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every elemen">
 
 
 
@@ -123,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/13/20160713-deep-learning-review/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/02/20160802-leetcode/"/>
 
-  <title> 神经网络中的深度学习：综述| Deep Learning in Neural Networks: An Overview | 机器学习及自然语言处理 </title>
+  <title> leetcode刷题记录13-14 | 机器学习及自然语言处理 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -245,7 +236,7 @@
             
             
               
-                神经网络中的深度学习：综述| Deep Learning in Neural Networks: An Overview
+                leetcode刷题记录13-14
               
             
           </h1>
@@ -257,8 +248,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-13T16:25:29+08:00" content="2016-07-13">
-              2016-07-13
+            <time itemprop="dateCreated" datetime="2016-08-02T11:25:29+08:00" content="2016-08-02">
+              2016-08-02
             </time>
           </span>
 
@@ -271,8 +262,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/deep-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">deep learning</span>
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
                   </a>
                 </span>
 
@@ -304,15 +295,16 @@
       
 
       
-        <p>关于<a href="http://arxiv.org/pdf/1404.7828.pdf" target="_blank" rel="external">Deep Learning in Neural Networks: An Overview</a>的粗糙翻译和个人理解</p>
-<h3 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a><strong>摘要：</strong></h3><p>近年来，深度人工神经网络赢得了大量模式识别与机器学习方面的比赛。这篇历史考察简要地总结了神经网络的相关工作，其中很多内容来自2000年之前。学习的深浅依据其CAP的深度来区分，即行为与影响之间的可学习链和因果联系的深度</p>
-<h4 id="停一下"><a href="#停一下" class="headerlink" title="停一下"></a><strong>停一下</strong></h4><ul>
-<li>什么是CAP(credit assignment paths)<br><a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank" rel="external">CAP</a>: Credit Assignment Path (字面上翻译成信用分配路径，wiki: A chain of transformations from input to output is a credit assignment path (CAP). CAPs describe potentially causal connections between input and output and may vary in length. For a feedforward neural network, the depth of the CAPs, and thus the depth of the network, is the number of hidden layers plus one (the output layer is also parameterized). For recurrent neural networks, in which a signal may propagate through a layer more than once, the CAP is potentially unlimited in length. There is no universally agreed upon threshold of depth dividing shallow learning from deep learning, but most researchers in the field agree that deep learning has multiple nonlinear layers (CAP &gt; 2) and Schmidhuber considers CAP &gt; 10 to be very deep learning)<br>CAP即输入到输出间的转换链(比如神经网络的神经元之间的输入输出转换？),CAPs描述了输入输出间可能的因果关系，并且长度有可能发生变化。对于一个前向反馈神经网络，其CAPs的深度，也即这一网络深度是其隐层数加一。对于递归神经网络，由于信号可能多次经过某个隐层，其CAPs有可能无限长。对于区分浅学习和深度学习的CAPs深度界限是多大并没有一个被普遍接受的结论，但这一领域的绝大多数研究者同意深度学习具有多元非线性的隐层（？？？），并且Schmidhuber认为CAP大于10就已经是非常深的深度学习了。</li>
-</ul>
-<h4 id="接着说"><a href="#接着说" class="headerlink" title="接着说"></a><strong>接着说</strong></h4><p>作者回顾了深度监督学习（包括反向传播的历史），无监督学习，强化学习和进化算法，以及and indirect search for short programs encoding deep and large networks.(这里不太理解，留待后续补充)</p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h3><p>（写作目的之类的介绍，暂且略过）</p>
-<h2 id="对神经网络-NNs-中的深度学习-DL-的介绍"><a href="#对神经网络-NNs-中的深度学习-DL-的介绍" class="headerlink" title="对神经网络(NNs)中的深度学习(DL)的介绍"></a><strong>对神经网络(NNs)中的深度学习(DL)的介绍</strong></h2><p>对于一个学习系统而言，决定其成功与否的可调节要素是什么？对它的何种调整可以提升其性能？这两个问题被称之为fundamental credit assignment problem. There are general credit assignment methods for universal problem solvers that are time-optimal in various theoretical senses (Sec. 6.8).然而目前的研究主要关注更窄但更有商业价值的领域：人工神经网络中的深度学习子领域。<br>一个标准的NN包含许多简单的相互连接的神经元，分别产生一系列的激活值。输入神经元由传感器对环境的感知而激活，其他的神经元通过带权重的连接被前一个神经元激活。某些神经元可以通过触发行为影响环境。Learning or credit assignment是寻找恰当的权重使NN表现出期望的行为，如驾驶汽车。对于不同的问题和神经元的连接方式，这种行为可能需要很长的causal chains of computational stages。DL通过很长的这种阶来精确求解。<br>20世纪80年代发现BP算法对隐层较多的神经网络而言是难以实现的，在1991年，通过无监督学习的帮助，DL在一定范围内是可以实现的。从2009年起，有监督DNN在很多官方模式识别比赛中获得惊人成绩，取得广泛关注。DNN也在其他更广泛的领域中发挥了重要作用。</p>
-<h2 id="Event-Oriented-Notation-for-Activation-Spreading-in-NNs"><a href="#Event-Oriented-Notation-for-Activation-Spreading-in-NNs" class="headerlink" title="Event-Oriented Notation for Activation Spreading in NNs"></a><strong>Event-Oriented Notation for Activation Spreading in NNs</strong></h2><p>在这篇论文中，i, j, k, t, p, q, r表示假定的取值范围已经在上下文中给出的正整数变量，n, m, T表示未给出的正整数变量。<br>一个神经网络的拓扑结构可能随时间而改变。在给定的时刻，其结构可以描述为一个有限的单元(节点或者神经元)集合 N={u_1,u_2,…,}和一个节点间有向边构成的集合H。</p>
+        <h3 id="介绍13"><a href="#介绍13" class="headerlink" title="介绍13"></a>介绍13</h3><p>Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p>
+<h3 id="思路13"><a href="#思路13" class="headerlink" title="思路13"></a>思路13</h3><p>先排序再比较</p>
+<h3 id="代码13"><a href="#代码13" class="headerlink" title="代码13"></a>代码13</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">containsDuplicate</span><span class="params">(self, nums)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :rtype: bool</div><div class="line">        """</div><div class="line">        t=<span class="keyword">False</span></div><div class="line">        nums.sort()</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)<span class="number">-1</span>):</div><div class="line">            <span class="keyword">if</span> nums[i]==nums[i+<span class="number">1</span>]:</div><div class="line">                t=<span class="keyword">True</span></div><div class="line">                <span class="keyword">break</span></div><div class="line">        <span class="keyword">return</span> t</div></pre></td></tr></table></figure>
+<h3 id="介绍14"><a href="#介绍14" class="headerlink" title="介绍14"></a>介绍14</h3><p>Given a n x n matrix where each of the rows and columns are sorted in ascending order, find the kth smallest element in the matrix.</p>
+<p>Note that it is the kth smallest element in the sorted order, not the kth distinct element.</p>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">matrix = [</div><div class="line">   [ 1,  5,  9],</div><div class="line">   [10, 11, 13],</div><div class="line">   [12, 13, 15]</div><div class="line">],</div><div class="line">k = 8,</div></pre></td></tr></table></figure>
+<p>return 13.<br>Note:<br>You may assume k is always valid, 1 ≤ k ≤ n2.</p>
+<h3 id="思路14"><a href="#思路14" class="headerlink" title="思路14"></a>思路14</h3><p>。。。有点无语，列表解析再排序就可以了，简单粗暴</p>
+<h3 id="代码14"><a href="#代码14" class="headerlink" title="代码14"></a>代码14</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">kthSmallest</span><span class="params">(self, matrix, k)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type matrix: List[List[int]]</div><div class="line">        :type k: int</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        new=[j <span class="keyword">for</span> i <span class="keyword">in</span> matrix <span class="keyword">for</span> j <span class="keyword">in</span> i]</div><div class="line">        new.sort()</div><div class="line">        <span class="keyword">return</span> new[k<span class="number">-1</span>]</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -338,16 +330,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/12/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/08/01/20160801-leetcode /" rel="next" title="leetcode刷题记录12">
+                <i class="fa fa-chevron-left"></i> leetcode刷题记录12
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/13/20160713-leetcode/" rel="prev" title="leetcode刷题记录1">
-                leetcode刷题记录1 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/03/20160803-leetcode /" rel="prev" title="leetcode刷题记录15">
+                leetcode刷题记录15 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -475,7 +467,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要："><span class="nav-number">1.</span> <span class="nav-text">摘要：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#停一下"><span class="nav-number">1.1.</span> <span class="nav-text">停一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接着说"><span class="nav-number">1.2.</span> <span class="nav-text">接着说</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对神经网络-NNs-中的深度学习-DL-的介绍"><span class="nav-number"></span> <span class="nav-text">对神经网络(NNs)中的深度学习(DL)的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-Oriented-Notation-for-Activation-Spreading-in-NNs"><span class="nav-number"></span> <span class="nav-text">Event-Oriented Notation for Activation Spreading in NNs</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍13"><span class="nav-number">1.</span> <span class="nav-text">介绍13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路13"><span class="nav-number">2.</span> <span class="nav-text">思路13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码13"><span class="nav-number">3.</span> <span class="nav-text">代码13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍14"><span class="nav-number">4.</span> <span class="nav-text">介绍14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路14"><span class="nav-number">5.</span> <span class="nav-text">思路14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码14"><span class="nav-number">6.</span> <span class="nav-text">代码14</span></a></li></ol></div>
             
           </div>
         </section>
