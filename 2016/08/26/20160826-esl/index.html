@@ -84,22 +84,16 @@
 
 
 
-<meta name="description" content="介绍15Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.
-For example,Given nums = [0, 1, 3] return 2.
-Note:Your algorithm should run in l">
+<meta name="description" content="The Elements of Statistical Learning (6.1)Kernel Smoothing Methods随手记用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode刷题记录15">
-<meta property="og:url" content="http://yoursite.com/2016/08/03/20160803-leetcode /index.html">
+<meta property="og:title" content="语言模型">
+<meta property="og:url" content="http://yoursite.com/2016/08/26/20160826-esl/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
-<meta property="og:description" content="介绍15Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.
-For example,Given nums = [0, 1, 3] return 2.
-Note:Your algorithm should run in l">
-<meta property="og:updated_time" content="2016-08-05T03:27:24.286Z">
+<meta property="og:description" content="The Elements of Statistical Learning (6.1)Kernel Smoothing Methods随手记用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^">
+<meta property="og:updated_time" content="2016-08-26T03:27:30.099Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode刷题记录15">
-<meta name="twitter:description" content="介绍15Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.
-For example,Given nums = [0, 1, 3] return 2.
-Note:Your algorithm should run in l">
+<meta name="twitter:title" content="语言模型">
+<meta name="twitter:description" content="The Elements of Statistical Learning (6.1)Kernel Smoothing Methods随手记用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^">
 
 
 
@@ -120,9 +114,9 @@ Note:Your algorithm should run in l">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/03/20160803-leetcode /"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/26/20160826-esl/"/>
 
-  <title> leetcode刷题记录15 | 机器学习及自然语言处理 </title>
+  <title> 语言模型 | 机器学习及自然语言处理 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +236,7 @@ Note:Your algorithm should run in l">
             
             
               
-                leetcode刷题记录15
+                语言模型
               
             
           </h1>
@@ -254,8 +248,8 @@ Note:Your algorithm should run in l">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-03T11:25:29+08:00" content="2016-08-03">
-              2016-08-03
+            <time itemprop="dateCreated" datetime="2016-08-26T10:25:29+08:00" content="2016-08-26">
+              2016-08-26
             </time>
           </span>
 
@@ -268,8 +262,8 @@ Note:Your algorithm should run in l">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
+                  <a href="/categories/ml/" itemprop="url" rel="index">
+                    <span itemprop="name">ml</span>
                   </a>
                 </span>
 
@@ -301,11 +295,12 @@ Note:Your algorithm should run in l">
       
 
       
-        <h3 id="介绍15"><a href="#介绍15" class="headerlink" title="介绍15"></a>介绍15</h3><p>Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.</p>
-<p>For example,<br>Given nums = [0, 1, 3] return 2.</p>
-<p>Note:<br>Your algorithm should run in linear runtime complexity. Could you implement it using only constant extra space complexity?</p>
-<h3 id="思路15"><a href="#思路15" class="headerlink" title="思路15"></a>思路15</h3><p>等差数列</p>
-<h3 id="代码15"><a href="#代码15" class="headerlink" title="代码15"></a>代码15</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">missingNumber</span><span class="params">(self, nums)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        s=sum(nums)</div><div class="line">        n=max(nums)</div><div class="line">        <span class="keyword">if</span> min(nums)!=<span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">if</span> n*(n+<span class="number">1</span>)/<span class="number">2</span>-s==<span class="number">0</span>:</div><div class="line">                <span class="keyword">return</span> n+<span class="number">1</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">return</span> n*(n+<span class="number">1</span>)/<span class="number">2</span>-s</div></pre></td></tr></table></figure>
+        <h2 id="The-Elements-of-Statistical-Learning-6-1"><a href="#The-Elements-of-Statistical-Learning-6-1" class="headerlink" title="The Elements of Statistical Learning (6.1)"></a>The Elements of Statistical Learning (6.1)</h2><h3 id="Kernel-Smoothing-Methods"><a href="#Kernel-Smoothing-Methods" class="headerlink" title="Kernel Smoothing Methods"></a>Kernel Smoothing Methods</h3><h4 id="随手记"><a href="#随手记" class="headerlink" title="随手记"></a>随手记</h4><p>用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^p$ by fitting a different but simple model separately at each query point  $x_0$</p>
+<p>理解：核平滑方法是一类通过对每个样本点分别拟合一个不同但简单函数来实现对函数$f(x)$的灵活的估计的方法。</p>
+<p>待了解：如何实现？性质？优点？缺陷？适用场景？ 如何是否需要且如何正则化避免过拟合？</p>
+<p>如何实现：只通过靠近$x_0$的点来拟合简单函数</p>
+<p>特点：不需要，或只需要极少的训练</p>
+<h4 id="一维核平滑："><a href="#一维核平滑：" class="headerlink" title="一维核平滑："></a>一维核平滑：</h4><p>Nadaraya-Watson 核平均加权：$$\hat{f}(x<em>0)=$ $\frac{\sum</em>{N}^{i=1}K_\lambda (x_0,x_i)y<em>i}{\sum</em>{N}^{i=1}K_\lambda (x_0,x_i)}$$</p>
 
       
     </div>
@@ -331,17 +326,13 @@ Note:Your algorithm should run in l">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/02/20160802-leetcode/" rel="next" title="leetcode刷题记录13-14">
-                <i class="fa fa-chevron-left"></i> leetcode刷题记录13-14
+              <a href="/2016/08/26/20160826-danciben/" rel="next" title="单词本">
+                <i class="fa fa-chevron-left"></i> 单词本
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/05/20160805-leetcode/" rel="prev" title="leetcode刷题记录16-18">
-                leetcode刷题记录16-18 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -468,7 +459,7 @@ Note:Your algorithm should run in l">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍15"><span class="nav-number">1.</span> <span class="nav-text">介绍15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路15"><span class="nav-number">2.</span> <span class="nav-text">思路15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码15"><span class="nav-number">3.</span> <span class="nav-text">代码15</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Elements-of-Statistical-Learning-6-1"><span class="nav-number">1.</span> <span class="nav-text">The Elements of Statistical Learning (6.1)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel-Smoothing-Methods"><span class="nav-number">1.1.</span> <span class="nav-text">Kernel Smoothing Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随手记"><span class="nav-number">1.1.1.</span> <span class="nav-text">随手记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一维核平滑："><span class="nav-number">1.1.2.</span> <span class="nav-text">一维核平滑：</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
