@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="介绍16There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning">
+<meta name="description" content="介绍19Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
+The function twoSum should return indices of the two numbe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode刷题记录16-18">
-<meta property="og:url" content="http://yoursite.com/2016/08/05/20160805-leetcode/index.html">
+<meta property="og:title" content="leetcode刷题记录19">
+<meta property="og:url" content="http://yoursite.com/2016/08/26/20160826-leetcode/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
-<meta property="og:description" content="介绍16There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning">
-<meta property="og:updated_time" content="2016-08-05T05:04:26.652Z">
+<meta property="og:description" content="介绍19Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
+The function twoSum should return indices of the two numbe">
+<meta property="og:updated_time" content="2016-08-26T09:12:36.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode刷题记录16-18">
-<meta name="twitter:description" content="介绍16There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning">
+<meta name="twitter:title" content="leetcode刷题记录19">
+<meta name="twitter:description" content="介绍19Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
+The function twoSum should return indices of the two numbe">
 
 
 
@@ -114,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/05/20160805-leetcode/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/26/20160826-leetcode/"/>
 
-  <title> leetcode刷题记录16-18 | 机器学习及自然语言处理 </title>
+  <title> leetcode刷题记录19 | 机器学习及自然语言处理 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +239,7 @@
             
             
               
-                leetcode刷题记录16-18
+                leetcode刷题记录19
               
             
           </h1>
@@ -248,8 +251,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-05T11:25:29+08:00" content="2016-08-05">
-              2016-08-05
+            <time itemprop="dateCreated" datetime="2016-08-26T17:05:29+08:00" content="2016-08-26">
+              2016-08-26
             </time>
           </span>
 
@@ -295,19 +298,12 @@
       
 
       
-        <h3 id="介绍16"><a href="#介绍16" class="headerlink" title="介绍16"></a>介绍16</h3><p>There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the ith round, you toggle every i bulb. For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
-<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Given n = 3. </div><div class="line"></div><div class="line">At first, the three bulbs are [off, off, off].</div><div class="line">After first round, the three bulbs are [on, on, on].</div><div class="line">After second round, the three bulbs are [on, off, on].</div><div class="line">After third round, the three bulbs are [on, off, off]. </div><div class="line"></div><div class="line">So you should return 1, because there is only one bulb is on.</div></pre></td></tr></table></figure></p>
-<h3 id="思路16"><a href="#思路16" class="headerlink" title="思路16"></a>思路16</h3><p>看因子个数</p>
-<h3 id="代码16"><a href="#代码16" class="headerlink" title="代码16"></a>代码16</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bulbSwitch</span><span class="params">(self, n)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type n: int</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        <span class="keyword">return</span> int(n**<span class="number">0.5</span>)</div></pre></td></tr></table></figure>
-<h3 id="介绍17"><a href="#介绍17" class="headerlink" title="介绍17"></a>介绍17</h3><p>Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.</p>
-<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
-<h3 id="思路17"><a href="#思路17" class="headerlink" title="思路17"></a>思路17</h3><p>中位数</p>
-<h3 id="代码17"><a href="#代码17" class="headerlink" title="代码17"></a>代码17</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorityElement</span><span class="params">(self, nums)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        nums.sort()</div><div class="line">        <span class="keyword">return</span> nums[int(len(nums))/<span class="number">2</span>]</div></pre></td></tr></table></figure>
-<h3 id="介绍18"><a href="#介绍18" class="headerlink" title="介绍18"></a>介绍18</h3><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+        <h3 id="介绍19"><a href="#介绍19" class="headerlink" title="介绍19"></a>介绍19</h3><p>Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.</p>
+<p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.</p>
 <p>You may assume that each input would have exactly one solution.</p>
-<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given nums = [2, 7, 11, 15], target = 9,</div><div class="line"></div><div class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</div><div class="line">return [0, 1].</div></pre></td></tr></table></figure></p>
-<h3 id="思路18"><a href="#思路18" class="headerlink" title="思路18"></a>思路18</h3><p>没复杂度要求，暴力破解</p>
-<h3 id="代码18"><a href="#代码18" class="headerlink" title="代码18"></a>代码18</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums, target)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :type target: int</div><div class="line">        :rtype: List[int]</div><div class="line">        """</div><div class="line">        t1=<span class="number">0</span></div><div class="line">        t2=<span class="number">0</span></div><div class="line">        find=<span class="keyword">False</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> find:</div><div class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,len(nums)):</div><div class="line">                    <span class="keyword">if</span> target-nums[i]==nums[j]:</div><div class="line">                        t1=i</div><div class="line">                        t2=j</div><div class="line">                        find=<span class="keyword">True</span></div><div class="line">                        <span class="keyword">break</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">break</span></div><div class="line">        <span class="keyword">return</span> [t1,t2]</div></pre></td></tr></table></figure>
+<p>Input: numbers={2, 7, 11, 15}, target=9<br>Output: index1=1, index2=2</p>
+<h3 id="思路19"><a href="#思路19" class="headerlink" title="思路19"></a>思路19</h3><p>想了三个节省时间的点，遇到和上一个数重复的，就不用再算了，另外由于已经排好序了，可以看当前数的两倍是否大于target，如果当前数加查询的数已经大于target，也不用继续查了</p>
+<h3 id="代码19"><a href="#代码19" class="headerlink" title="代码19"></a>代码19</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, numbers, target)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type numbers: List[int]</div><div class="line">        :type target: int</div><div class="line">        :rtype: List[int]</div><div class="line">        """</div><div class="line">        find=<span class="keyword">False</span>   </div><div class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> range(len(numbers)):</div><div class="line">           <span class="keyword">if</span> (n==<span class="number">0</span>) <span class="keyword">or</span> (numbers[n]!=numbers[n<span class="number">-1</span>]):</div><div class="line">             <span class="keyword">if</span> <span class="keyword">not</span> find:</div><div class="line">                  <span class="keyword">if</span> numbers[n]*<span class="number">2</span>&gt;target:</div><div class="line">                       nums=numbers[:n]</div><div class="line">                       base=<span class="number">0</span></div><div class="line">                  <span class="keyword">else</span>:</div><div class="line">                       nums=numbers[n+<span class="number">1</span>:]</div><div class="line">                       base=n+<span class="number">1</span></div><div class="line">                  x=numbers[n]</div><div class="line">                  <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</div><div class="line">                      <span class="keyword">if</span> i+x&gt;target:</div><div class="line">                            <span class="keyword">break</span></div><div class="line">                      <span class="keyword">elif</span> nums[i]+x==target:</div><div class="line">                            r=[n+<span class="number">1</span>,base+i+<span class="number">1</span>]</div><div class="line">                            r.sort()</div><div class="line">                            find=<span class="keyword">True</span></div><div class="line">                            <span class="keyword">break</span></div><div class="line">             <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">return</span> r</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -333,17 +329,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/03/20160803-leetcode /" rel="next" title="leetcode刷题记录15">
-                <i class="fa fa-chevron-left"></i> leetcode刷题记录15
+              <a href="/2016/08/26/20160826-esl/" rel="next" title="语言模型">
+                <i class="fa fa-chevron-left"></i> 语言模型
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/26/20160826-danciben/" rel="prev" title="单词本">
-                单词本 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -470,7 +462,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍16"><span class="nav-number">1.</span> <span class="nav-text">介绍16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路16"><span class="nav-number">2.</span> <span class="nav-text">思路16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码16"><span class="nav-number">3.</span> <span class="nav-text">代码16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍17"><span class="nav-number">4.</span> <span class="nav-text">介绍17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路17"><span class="nav-number">5.</span> <span class="nav-text">思路17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码17"><span class="nav-number">6.</span> <span class="nav-text">代码17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍18"><span class="nav-number">7.</span> <span class="nav-text">介绍18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路18"><span class="nav-number">8.</span> <span class="nav-text">思路18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码18"><span class="nav-number">9.</span> <span class="nav-text">代码18</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍19"><span class="nav-number">1.</span> <span class="nav-text">介绍19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路19"><span class="nav-number">2.</span> <span class="nav-text">思路19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码19"><span class="nav-number">3.</span> <span class="nav-text">代码19</span></a></li></ol></div>
             
           </div>
         </section>
