@@ -84,22 +84,16 @@
 
 
 
-<meta name="description" content="介绍Given a non-empty array of integers, return the k most frequent elements.
-For example,Given [1,1,1,2,2,3] and k = 2, return [1,2].
-Note:You may assume k is always valid, 1 ≤ k ≤ number of unique ele">
+<meta name="description" content="介绍Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case le">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode刷题记录8">
-<meta property="og:url" content="http://yoursite.com/2016/07/29/20160729-leetcode/index.html">
+<meta property="og:title" content="leetcode刷题记录20">
+<meta property="og:url" content="http://yoursite.com/2016/08/27/20160827-leetcode /index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
-<meta property="og:description" content="介绍Given a non-empty array of integers, return the k most frequent elements.
-For example,Given [1,1,1,2,2,3] and k = 2, return [1,2].
-Note:You may assume k is always valid, 1 ≤ k ≤ number of unique ele">
-<meta property="og:updated_time" content="2016-07-29T03:17:59.472Z">
+<meta property="og:description" content="介绍Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case le">
+<meta property="og:updated_time" content="2016-08-27T07:44:25.735Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode刷题记录8">
-<meta name="twitter:description" content="介绍Given a non-empty array of integers, return the k most frequent elements.
-For example,Given [1,1,1,2,2,3] and k = 2, return [1,2].
-Note:You may assume k is always valid, 1 ≤ k ≤ number of unique ele">
+<meta name="twitter:title" content="leetcode刷题记录20">
+<meta name="twitter:description" content="介绍Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case le">
 
 
 
@@ -120,9 +114,9 @@ Note:You may assume k is always valid, 1 ≤ k ≤ number of unique ele">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/29/20160729-leetcode/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/27/20160827-leetcode /"/>
 
-  <title> leetcode刷题记录8 | 机器学习及自然语言处理 </title>
+  <title> leetcode刷题记录20 | 机器学习及自然语言处理 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +236,7 @@ Note:You may assume k is always valid, 1 ≤ k ≤ number of unique ele">
             
             
               
-                leetcode刷题记录8
+                leetcode刷题记录20
               
             
           </h1>
@@ -254,8 +248,8 @@ Note:You may assume k is always valid, 1 ≤ k ≤ number of unique ele">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-29T11:16:29+08:00" content="2016-07-29">
-              2016-07-29
+            <time itemprop="dateCreated" datetime="2016-08-27T15:05:29+08:00" content="2016-08-27">
+              2016-08-27
             </time>
           </span>
 
@@ -301,11 +295,12 @@ Note:You may assume k is always valid, 1 ≤ k ≤ number of unique ele">
       
 
       
-        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Given a non-empty array of integers, return the k most frequent elements.</p>
-<p>For example,<br>Given [1,1,1,2,2,3] and k = 2, return [1,2].</p>
-<p>Note:<br>You may assume k is always valid, 1 ≤ k ≤ number of unique elements.<br>Your algorithm’s time complexity must be better than O(n log n), where n is the array’s size.</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>没啥好说的，很简单，做两次排序就可以了，中间出了一个bug，没考虑到传入的数列只有一个数的情况，还有最后一个数不会计入n，所以在首尾分别加个字符就行了。首尾容易出问题就让他不成为首尾就行了</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent</span><span class="params">(self, nums, k)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :type k: int</div><div class="line">        :rtype: List[int]</div><div class="line">        """</div><div class="line">        nums.sort()</div><div class="line">        nums=[<span class="string">'a'</span>]+nums+[<span class="string">'b'</span>]</div><div class="line">        mark=<span class="string">''</span></div><div class="line">        n=<span class="number">0</span></div><div class="line">        s=[]</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums:</div><div class="line">            <span class="keyword">if</span> mark!=i:</div><div class="line">                s.append([n,mark])</div><div class="line">                mark=i</div><div class="line">                n=<span class="number">1</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                n=n+<span class="number">1</span></div><div class="line">        <span class="keyword">del</span> s[:<span class="number">2</span>]</div><div class="line">        s.sort(reverse=<span class="keyword">True</span>)</div><div class="line">        s=s[:k]</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</div><div class="line">            s[i]=s[i][<span class="number">1</span>]</div><div class="line">        <span class="keyword">return</span> s</div></pre></td></tr></table></figure>
+        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. You may assume that each word will contain only lower case letters. If no such two words exist, return 0.</p>
+<p>Example 1:<br>Given [“abcw”, “baz”, “foo”, “bar”, “xtfn”, “abcdef”]<br>Return 16<br>The two words can be “abcw”, “xtfn”.</p>
+<p>Example 2:<br>Given [“a”, “ab”, “abc”, “d”, “cd”, “bcd”, “abcd”]<br>Return 4<br>The two words can be “ab”, “cd”.</p>
+<p>Example 3:<br>Given [“a”, “aa”, “aaa”, “aaaa”]<br>Return 0<br>No such pair of words.</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>位操作 利用集合去重</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProduct</span><span class="params">(self, words)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type words: List[str]</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        wordlength=[len(i) <span class="keyword">for</span> i <span class="keyword">in</span> words]</div><div class="line">        l=len(words)</div><div class="line">        <span class="keyword">if</span> l==<span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            r=<span class="number">0</span></div><div class="line">            wordlist=[list(set(i)) <span class="keyword">for</span> i <span class="keyword">in</span> words]</div><div class="line">            wordnumbers=[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(l)]</div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(l):</div><div class="line">                numsum=<span class="number">0</span></div><div class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> wordlist[i]:</div><div class="line">                     numsum=numsum+<span class="number">2</span>**(ord(j)<span class="number">-97</span>)</div><div class="line">                wordnumbers[i]=numsum</div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(l):</div><div class="line">                <span class="keyword">if</span> i==l<span class="number">-1</span>:</div><div class="line">                    <span class="keyword">return</span> r</div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                    <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,l):</div><div class="line">                        <span class="keyword">if</span> wordnumbers[i]^wordnumbers[j]==wordnumbers[i]+wordnumbers[j]:</div><div class="line">                             r=max(wordlength[i]*wordlength[j],r)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -331,17 +326,13 @@ Note:You may assume k is always valid, 1 ≤ k ≤ number of unique ele">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/25/20160725-leetcode/" rel="next" title="leetcode刷题记录3-7">
-                <i class="fa fa-chevron-left"></i> leetcode刷题记录3-7
+              <a href="/2016/08/27/20160827-esl/" rel="next" title="esl:Kernel Smoothing Methods">
+                <i class="fa fa-chevron-left"></i> esl:Kernel Smoothing Methods
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/31/20160731-leetcode/" rel="prev" title="leetcode刷题记录9-11">
-                leetcode刷题记录9-11 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

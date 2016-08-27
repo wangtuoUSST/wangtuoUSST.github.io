@@ -87,10 +87,10 @@
 <meta name="description" content="The Elements of Statistical Learning (6)Kernel Smoothing Methods随手记用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^p$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="esl:Kernel Smoothing Methods">
-<meta property="og:url" content="http://yoursite.com/2016/08/26/20160826-esl/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/08/27/20160827-esl/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
 <meta property="og:description" content="The Elements of Statistical Learning (6)Kernel Smoothing Methods随手记用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^p$">
-<meta property="og:updated_time" content="2016-08-26T09:15:15.066Z">
+<meta property="og:updated_time" content="2016-08-27T04:40:00.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="esl:Kernel Smoothing Methods">
 <meta name="twitter:description" content="The Elements of Statistical Learning (6)Kernel Smoothing Methods随手记用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^p$">
@@ -114,7 +114,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/26/20160826-esl/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/27/20160827-esl/"/>
 
   <title> esl:Kernel Smoothing Methods | 机器学习及自然语言处理 </title>
 </head>
@@ -248,8 +248,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-26T10:25:29+08:00" content="2016-08-26">
-              2016-08-26
+            <time itemprop="dateCreated" datetime="2016-08-27T11:25:29+08:00" content="2016-08-27">
+              2016-08-27
             </time>
           </span>
 
@@ -297,15 +297,21 @@
       
         <h2 id="The-Elements-of-Statistical-Learning-6"><a href="#The-Elements-of-Statistical-Learning-6" class="headerlink" title="The Elements of Statistical Learning (6)"></a>The Elements of Statistical Learning (6)</h2><h3 id="Kernel-Smoothing-Methods"><a href="#Kernel-Smoothing-Methods" class="headerlink" title="Kernel Smoothing Methods"></a>Kernel Smoothing Methods</h3><h4 id="随手记"><a href="#随手记" class="headerlink" title="随手记"></a>随手记</h4><p>用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^p$ by fitting a different but simple model separately at each query point  $x_0$</p>
 <p>理解：核平滑方法是一类通过对每个样本点分别拟合一个不同但简单函数来实现对函数$f(x)$的灵活的估计的方法。</p>
-<p>待了解：如何实现？性质？优点？缺陷？适用场景？ 如何是否需要且如何正则化避免过拟合？</p>
+<p>待了解：如何实现？性质？优点？缺陷？适用场景？ 是否需要且如何正则化避免过拟合？</p>
 <p>如何实现：只通过靠近$x_0$的点来拟合简单函数</p>
 <p>特点：不需要，或只需要极少的训练</p>
 <h4 id="一维核平滑："><a href="#一维核平滑：" class="headerlink" title="一维核平滑："></a>一维核平滑：</h4><p>Nadaraya-Watson 核平均加权：$$\frac{\sum K_t (x_0,x_i)y_i}{\sum K_t (x_0,x_i)}$$</p>
-<p>采用Epanechnikov 二次核：$$K_t(x_0,x)=D(\frac{\left | x-x_0 \right |}{\lambda})$$</p>
+<p>采用Epanechnikov 二次核：$$K_\lambda (x_0,x)=D(\frac{\left | x-x_0 \right |}{\lambda})$$</p>
 <p>其中</p>
 <p>$$<br>D(t)<br>\begin{cases}<br> &amp; \text{ $\frac{3}{4}(1-t^2)$ if  } \left | t \right | \leqslant 1 \\<br> &amp; \text{ 0  otherwise. }<br>\end{cases}<br>$$</p>
 <p>通过对依据距离进行加权，得到光滑且连续的拟合函数，有别于KNN</p>
-
+<p>令$h_\lambda(x_0)$为宽度函数，决定 $x_0$ 领域的宽度。那么更一般化的，核可以表示为</p>
+<p></p><p><br>$$K_\lambda (x_0,x)=D(\frac{\left | x-x_0 \right |}{h_t(x_0)})$$<br></p><br>KNN是 $h_k(x_0)=\left | x_0-x_k \right |$的特例，其中 \(x_k\)表示距离 $x_0$ 最近的第k个点<p></p>
+<p>实践中需要注意的细节：<br>1.光滑参数$\lambda$需要自行选取，\(\lambda\) 越大则方差越小偏倚越大<br>2.结的处理<br>3.边界问题</p>
+<h4 id="局部线性回归-Local-Linear-Regression"><a href="#局部线性回归-Local-Linear-Regression" class="headerlink" title="局部线性回归(Local Linear Regression)"></a>局部线性回归(Local Linear Regression)</h4><p>光滑核平滑仍有问题，由于在边界区域核的不对称性，可能出现较大偏倚（对称的话偏倚可以相互抵消）<br>可以采用局部线性回归应对这一问题，即对每一个点分别求解核加权最小二乘方问题</p>
+<p>局部线性拟合以适当方差为代价，可以显著减缓边界上的偏倚</p>
+<p>局部二次拟合对边界上的偏倚改进不大，且方差增大了很多，但是对于降低定义域内部因曲率导致的偏倚最起作用。</p>
+<h4 id="选择核宽度"><a href="#选择核宽度" class="headerlink" title="选择核宽度"></a>选择核宽度</h4>
       
     </div>
 
@@ -330,16 +336,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/26/20160826-danciben/" rel="next" title="单词本">
-                <i class="fa fa-chevron-left"></i> 单词本
+              <a href="/2016/08/26/20160826-JMRL-Random-Rotation-Ensembles/" rel="next" title="Random Rotation Ensembles">
+                <i class="fa fa-chevron-left"></i> Random Rotation Ensembles
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/26/20160826-leetcode/" rel="prev" title="leetcode刷题记录19">
-                leetcode刷题记录19 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/27/20160827-leetcode /" rel="prev" title="leetcode刷题记录20">
+                leetcode刷题记录20 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -408,7 +414,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -467,7 +473,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Elements-of-Statistical-Learning-6"><span class="nav-number">1.</span> <span class="nav-text">The Elements of Statistical Learning (6)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel-Smoothing-Methods"><span class="nav-number">1.1.</span> <span class="nav-text">Kernel Smoothing Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随手记"><span class="nav-number">1.1.1.</span> <span class="nav-text">随手记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一维核平滑："><span class="nav-number">1.1.2.</span> <span class="nav-text">一维核平滑：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Elements-of-Statistical-Learning-6"><span class="nav-number">1.</span> <span class="nav-text">The Elements of Statistical Learning (6)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel-Smoothing-Methods"><span class="nav-number">1.1.</span> <span class="nav-text">Kernel Smoothing Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随手记"><span class="nav-number">1.1.1.</span> <span class="nav-text">随手记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一维核平滑："><span class="nav-number">1.1.2.</span> <span class="nav-text">一维核平滑：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部线性回归-Local-Linear-Regression"><span class="nav-number">1.1.3.</span> <span class="nav-text">局部线性回归(Local Linear Regression)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择核宽度"><span class="nav-number">1.1.4.</span> <span class="nav-text">选择核宽度</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
