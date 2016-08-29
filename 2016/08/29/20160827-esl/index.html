@@ -84,25 +84,16 @@
 
 
 
-<meta name="description" content="关于Deep Learning in Neural Networks: An Overview的粗糙翻译和个人理解
-摘要：近年来，深度人工神经网络赢得了大量模式识别与机器学习方面的比赛。这篇历史考察简要地总结了神经网络的相关工作，其中很多内容来自2000年之前。学习的深浅依据其CAP的深度来区分，即行为与影响之间的可学习链和因果联系的深度
-停一下
-什么是CAP(credit assignment">
+<meta name="description" content="The Elements of Statistical Learning (6)Kernel Smoothing Methods随手记用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^p$">
 <meta property="og:type" content="article">
-<meta property="og:title" content="神经网络中的深度学习：综述| Deep Learning in Neural Networks: An Overview">
-<meta property="og:url" content="http://yoursite.com/2016/07/13/20160713-deep-learning-review/index.html">
+<meta property="og:title" content="esl:Kernel Smoothing Methods">
+<meta property="og:url" content="http://yoursite.com/2016/08/29/20160827-esl/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
-<meta property="og:description" content="关于Deep Learning in Neural Networks: An Overview的粗糙翻译和个人理解
-摘要：近年来，深度人工神经网络赢得了大量模式识别与机器学习方面的比赛。这篇历史考察简要地总结了神经网络的相关工作，其中很多内容来自2000年之前。学习的深浅依据其CAP的深度来区分，即行为与影响之间的可学习链和因果联系的深度
-停一下
-什么是CAP(credit assignment">
-<meta property="og:updated_time" content="2016-07-13T08:26:44.849Z">
+<meta property="og:description" content="The Elements of Statistical Learning (6)Kernel Smoothing Methods随手记用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^p$">
+<meta property="og:updated_time" content="2016-08-29T11:24:57.419Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="神经网络中的深度学习：综述| Deep Learning in Neural Networks: An Overview">
-<meta name="twitter:description" content="关于Deep Learning in Neural Networks: An Overview的粗糙翻译和个人理解
-摘要：近年来，深度人工神经网络赢得了大量模式识别与机器学习方面的比赛。这篇历史考察简要地总结了神经网络的相关工作，其中很多内容来自2000年之前。学习的深浅依据其CAP的深度来区分，即行为与影响之间的可学习链和因果联系的深度
-停一下
-什么是CAP(credit assignment">
+<meta name="twitter:title" content="esl:Kernel Smoothing Methods">
+<meta name="twitter:description" content="The Elements of Statistical Learning (6)Kernel Smoothing Methods随手记用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^p$">
 
 
 
@@ -123,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/13/20160713-deep-learning-review/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/29/20160827-esl/"/>
 
-  <title> 神经网络中的深度学习：综述| Deep Learning in Neural Networks: An Overview | 机器学习及自然语言处理 </title>
+  <title> esl:Kernel Smoothing Methods | 机器学习及自然语言处理 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -245,7 +236,7 @@
             
             
               
-                神经网络中的深度学习：综述| Deep Learning in Neural Networks: An Overview
+                esl:Kernel Smoothing Methods
               
             
           </h1>
@@ -257,8 +248,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-13T16:25:29+08:00" content="2016-07-13">
-              2016-07-13
+            <time itemprop="dateCreated" datetime="2016-08-29T17:25:29+08:00" content="2016-08-29">
+              2016-08-29
             </time>
           </span>
 
@@ -271,8 +262,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/deep-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">deep learning</span>
+                  <a href="/categories/ml/" itemprop="url" rel="index">
+                    <span itemprop="name">ml</span>
                   </a>
                 </span>
 
@@ -304,15 +295,25 @@
       
 
       
-        <p>关于<a href="http://arxiv.org/pdf/1404.7828.pdf" target="_blank" rel="external">Deep Learning in Neural Networks: An Overview</a>的粗糙翻译和个人理解</p>
-<h3 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a><strong>摘要：</strong></h3><p>近年来，深度人工神经网络赢得了大量模式识别与机器学习方面的比赛。这篇历史考察简要地总结了神经网络的相关工作，其中很多内容来自2000年之前。学习的深浅依据其CAP的深度来区分，即行为与影响之间的可学习链和因果联系的深度</p>
-<h4 id="停一下"><a href="#停一下" class="headerlink" title="停一下"></a><strong>停一下</strong></h4><ul>
-<li>什么是CAP(credit assignment paths)<br><a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank" rel="external">CAP</a>: Credit Assignment Path (字面上翻译成信用分配路径，wiki: A chain of transformations from input to output is a credit assignment path (CAP). CAPs describe potentially causal connections between input and output and may vary in length. For a feedforward neural network, the depth of the CAPs, and thus the depth of the network, is the number of hidden layers plus one (the output layer is also parameterized). For recurrent neural networks, in which a signal may propagate through a layer more than once, the CAP is potentially unlimited in length. There is no universally agreed upon threshold of depth dividing shallow learning from deep learning, but most researchers in the field agree that deep learning has multiple nonlinear layers (CAP &gt; 2) and Schmidhuber considers CAP &gt; 10 to be very deep learning)<br>CAP即输入到输出间的转换链(比如神经网络的神经元之间的输入输出转换？),CAPs描述了输入输出间可能的因果关系，并且长度有可能发生变化。对于一个前向反馈神经网络，其CAPs的深度，也即这一网络深度是其隐层数加一。对于递归神经网络，由于信号可能多次经过某个隐层，其CAPs有可能无限长。对于区分浅学习和深度学习的CAPs深度界限是多大并没有一个被普遍接受的结论，但这一领域的绝大多数研究者同意深度学习具有多元非线性的隐层（？？？），并且Schmidhuber认为CAP大于10就已经是非常深的深度学习了。</li>
-</ul>
-<h4 id="接着说"><a href="#接着说" class="headerlink" title="接着说"></a><strong>接着说</strong></h4><p>作者回顾了深度监督学习（包括反向传播的历史），无监督学习，强化学习和进化算法，以及and indirect search for short programs encoding deep and large networks.(这里不太理解，留待后续补充)</p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h3><p>（写作目的之类的介绍，暂且略过）</p>
-<h2 id="对神经网络-NNs-中的深度学习-DL-的介绍"><a href="#对神经网络-NNs-中的深度学习-DL-的介绍" class="headerlink" title="对神经网络(NNs)中的深度学习(DL)的介绍"></a><strong>对神经网络(NNs)中的深度学习(DL)的介绍</strong></h2><p>对于一个学习系统而言，决定其成功与否的可调节要素是什么？对它的何种调整可以提升其性能？这两个问题被称之为fundamental credit assignment problem. There are general credit assignment methods for universal problem solvers that are time-optimal in various theoretical senses (Sec. 6.8).然而目前的研究主要关注更窄但更有商业价值的领域：人工神经网络中的深度学习子领域。<br>一个标准的NN包含许多简单的相互连接的神经元，分别产生一系列的激活值。输入神经元由传感器对环境的感知而激活，其他的神经元通过带权重的连接被前一个神经元激活。某些神经元可以通过触发行为影响环境。Learning or credit assignment是寻找恰当的权重使NN表现出期望的行为，如驾驶汽车。对于不同的问题和神经元的连接方式，这种行为可能需要很长的causal chains of computational stages。DL通过很长的这种阶来精确求解。<br>20世纪80年代发现BP算法对隐层较多的神经网络而言是难以实现的，在1991年，通过无监督学习的帮助，DL在一定范围内是可以实现的。从2009年起，有监督DNN在很多官方模式识别比赛中获得惊人成绩，取得广泛关注。DNN也在其他更广泛的领域中发挥了重要作用。</p>
-<h2 id="Event-Oriented-Notation-for-Activation-Spreading-in-NNs"><a href="#Event-Oriented-Notation-for-Activation-Spreading-in-NNs" class="headerlink" title="Event-Oriented Notation for Activation Spreading in NNs"></a><strong>Event-Oriented Notation for Activation Spreading in NNs</strong></h2><p>在这篇论文中，i, j, k, t, p, q, r表示假定的取值范围已经在上下文中给出的正整数变量，n, m, T表示未给出的正整数变量。<br>一个神经网络的拓扑结构可能随时间而改变。在给定的时刻，其结构可以描述为一个有限的单元(节点或者神经元)集合 N={u_1,u_2,…,}和一个节点间有向边构成的集合H。</p>
+        <h2 id="The-Elements-of-Statistical-Learning-6"><a href="#The-Elements-of-Statistical-Learning-6" class="headerlink" title="The Elements of Statistical Learning (6)"></a>The Elements of Statistical Learning (6)</h2><h3 id="Kernel-Smoothing-Methods"><a href="#Kernel-Smoothing-Methods" class="headerlink" title="Kernel Smoothing Methods"></a>Kernel Smoothing Methods</h3><h4 id="随手记"><a href="#随手记" class="headerlink" title="随手记"></a>随手记</h4><p>用途：It’s a class of regression techniques that achieve flexibility in estimating the regression function $f(x)$ over the domain $IR^p$ by fitting a different but simple model separately at each query point  $x_0$</p>
+<p>理解：核平滑方法是一类通过对每个样本点分别拟合一个不同但简单函数来实现对函数$f(x)$的灵活的估计的方法。</p>
+<p>待了解：如何实现？性质？优点？缺陷？适用场景？ 是否需要且如何正则化避免过拟合？</p>
+<p>如何实现：只通过靠近$x_0$的点来拟合简单函数</p>
+<p>特点：不需要，或只需要极少的训练</p>
+<h4 id="一维核平滑："><a href="#一维核平滑：" class="headerlink" title="一维核平滑："></a>一维核平滑：</h4><p>Nadaraya-Watson 核平均加权：$$\frac{\sum K_t (x_0,x_i)y_i}{\sum K_t (x_0,x_i)}$$</p>
+<p>采用Epanechnikov 二次核：$$K_\lambda (x_0,x)=D(\frac{\left | x-x_0 \right |}{\lambda})$$</p>
+<p>其中</p>
+<p>$$<br>D(t)<br>\begin{cases}<br> &amp; \text{ $\frac{3}{4}(1-t^2)$ if  } \left | t \right | \leqslant 1 \\<br> &amp; \text{ 0  otherwise. }<br>\end{cases}<br>$$</p>
+<p>通过对依据距离进行加权，得到光滑且连续的拟合函数，有别于KNN</p>
+<p>令$h_\lambda(x_0)$为宽度函数，决定 $x_0$ 领域的宽度。那么更一般化的，核可以表示为</p>
+<p></p><p><br>$$K_\lambda (x_0,x)=D(\frac{\left | x-x_0 \right |}{h_t(x_0)})$$<br></p><br>KNN是 $h_k(x_0)=\left | x_0-x_k \right |$的特例，其中 \(x_k\)表示距离 $x_0$ 最近的第k个点<p></p>
+<p>实践中需要注意的细节：<br>1.光滑参数$\lambda$需要自行选取，\(\lambda\) 越大则方差越小偏倚越大<br>2.结的处理<br>3.边界问题</p>
+<h4 id="局部线性回归-Local-Linear-Regression"><a href="#局部线性回归-Local-Linear-Regression" class="headerlink" title="局部线性回归(Local Linear Regression)"></a>局部线性回归(Local Linear Regression)</h4><p>光滑核平滑仍有问题，由于在边界区域核的不对称性，可能出现较大偏倚（对称的话偏倚可以相互抵消）<br>可以采用局部线性回归应对这一问题，即对每一个点分别求解核加权最小二乘方问题</p>
+<p>局部线性拟合以适当方差为代价，可以显著减缓边界上的偏倚</p>
+<p>局部二次拟合对边界上的偏倚改进不大，且方差增大了很多，但是对于降低定义域内部因曲率导致的偏倚最起作用。</p>
+<h4 id="选择核宽度"><a href="#选择核宽度" class="headerlink" title="选择核宽度"></a>选择核宽度</h4><p>$\lambda$的选择是方差-偏倚权衡，\(\lambda\) 越大方差越小偏倚越大，对于局部线性回归，如果宽度无限大则趋向于全局线性最小二乘方拟合</p>
+<p>正则化参数的选择与光滑样条一章提到的方法相同</p>
+<h4 id="多维情况"><a href="#多维情况" class="headerlink" title="多维情况"></a>多维情况</h4><p>一维核光滑可以很容易的推广到高维，但边界问题在高维情况下更严重,如果一定要用核光滑的话（干嘛非要用呢？高维不行就不用换别的方法不就得了），应对办法有：<br>采用结构化核：$$K_\lambda A (x_0,x)=D(\frac{(x-x_0)^TA(x-x_0)}{\lambda})$$<br>其中<em>A</em>为半正定矩阵，通过<em>A</em>来调节不同维度的影响（通过观察协方差矩阵）<br>或做方差分析，舍弃部分高阶项<br>（不管怎么处理，感觉都只能缓解而已，高维直接就不用核平滑算了）</p>
 
       
     </div>
@@ -338,16 +339,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/12/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/08/27/20160827-leetcode /" rel="next" title="leetcode刷题记录20">
+                <i class="fa fa-chevron-left"></i> leetcode刷题记录20
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/13/20160713-leetcode/" rel="prev" title="leetcode刷题记录1">
-                leetcode刷题记录1 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/29/20160826-JMRL-Random-Rotation-Ensembles/" rel="prev" title="Random Rotation Ensembles">
+                Random Rotation Ensembles <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -475,7 +476,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要："><span class="nav-number">1.</span> <span class="nav-text">摘要：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#停一下"><span class="nav-number">1.1.</span> <span class="nav-text">停一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接着说"><span class="nav-number">1.2.</span> <span class="nav-text">接着说</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对神经网络-NNs-中的深度学习-DL-的介绍"><span class="nav-number"></span> <span class="nav-text">对神经网络(NNs)中的深度学习(DL)的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-Oriented-Notation-for-Activation-Spreading-in-NNs"><span class="nav-number"></span> <span class="nav-text">Event-Oriented Notation for Activation Spreading in NNs</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Elements-of-Statistical-Learning-6"><span class="nav-number">1.</span> <span class="nav-text">The Elements of Statistical Learning (6)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel-Smoothing-Methods"><span class="nav-number">1.1.</span> <span class="nav-text">Kernel Smoothing Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随手记"><span class="nav-number">1.1.1.</span> <span class="nav-text">随手记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一维核平滑："><span class="nav-number">1.1.2.</span> <span class="nav-text">一维核平滑：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部线性回归-Local-Linear-Regression"><span class="nav-number">1.1.3.</span> <span class="nav-text">局部线性回归(Local Linear Regression)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择核宽度"><span class="nav-number">1.1.4.</span> <span class="nav-text">选择核宽度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多维情况"><span class="nav-number">1.1.5.</span> <span class="nav-text">多维情况</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
