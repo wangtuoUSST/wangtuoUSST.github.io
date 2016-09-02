@@ -84,25 +84,15 @@
 
 
 
-<meta name="description" content="介绍Given a string, find the first non-repeating character in it and return it’s index. If it doesn’t exist, return -1.
-Examples:
-s = “leetcode”return 0.
-s = “loveleetcode”,return 2.Note: You may assume">
-<meta property="og:type" content="article">
-<meta property="og:title" content="leetcode刷题记录21">
-<meta property="og:url" content="http://yoursite.com/2016/08/27/20160829-leetcode/index.html">
+<meta name="description" content="想到啥就写啥">
+<meta property="og:type" content="website">
+<meta property="og:title" content="机器学习及自然语言处理">
+<meta property="og:url" content="http://yoursite.com/archives/2016/page/3/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
-<meta property="og:description" content="介绍Given a string, find the first non-repeating character in it and return it’s index. If it doesn’t exist, return -1.
-Examples:
-s = “leetcode”return 0.
-s = “loveleetcode”,return 2.Note: You may assume">
-<meta property="og:updated_time" content="2016-08-29T02:01:48.145Z">
+<meta property="og:description" content="想到啥就写啥">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode刷题记录21">
-<meta name="twitter:description" content="介绍Given a string, find the first non-repeating character in it and return it’s index. If it doesn’t exist, return -1.
-Examples:
-s = “leetcode”return 0.
-s = “loveleetcode”,return 2.Note: You may assume">
+<meta name="twitter:title" content="机器学习及自然语言处理">
+<meta name="twitter:description" content="想到啥就写啥">
 
 
 
@@ -123,9 +113,9 @@ s = “loveleetcode”,return 2.Note: You may assume">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/27/20160829-leetcode/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/2016/page/3/"/>
 
-  <title> leetcode刷题记录21 | 机器学习及自然语言处理 </title>
+  <title> 归档 | 机器学习及自然语言处理 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -146,7 +136,7 @@ s = “loveleetcode”,return 2.Note: You may assume">
     
   
 
-  <div class="container one-collumn sidebar-position-right page-post-detail ">
+  <div class="container one-collumn sidebar-position-right  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,144 +214,70 @@ s = “loveleetcode”,return 2.Note: You may assume">
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 21 篇日志。 继续努力。
+    </span>
+
     
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                leetcode刷题记录21
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-27T15:05:29+08:00" content="2016-08-27">
-              2016-08-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
-      
-        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Given a string, find the first non-repeating character in it and return it’s index. If it doesn’t exist, return -1.</p>
-<p>Examples:</p>
-<p>s = “leetcode”<br>return 0.</p>
-<p>s = “loveleetcode”,<br>return 2.<br>Note: You may assume the string contain only lowercase letters.</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>字典储存位置和新字母。发现重复就删除，储存到Del中</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">firstUniqChar</span><span class="params">(self, s)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        new=&#123;&#125;</div><div class="line">        Del=<span class="string">''</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</div><div class="line">            <span class="keyword">if</span> s[i] <span class="keyword">not</span> <span class="keyword">in</span> new:</div><div class="line">                <span class="keyword">if</span> s[i] <span class="keyword">not</span> <span class="keyword">in</span> Del:</div><div class="line">                    new[s[i]]=i</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">del</span> new[s[i]]</div><div class="line">                Del=Del+s[i]</div><div class="line">        <span class="keyword">if</span> new==&#123;&#125;:</div><div class="line">            <span class="keyword">return</span> <span class="number">-1</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> min(new.values())</div></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    <div>
       
         
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/08/26/20160826-leetcode/" rel="next" title="leetcode刷题记录19">
-                <i class="fa fa-chevron-left"></i> leetcode刷题记录19
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/27/20160827-leetcode /" rel="prev" title="leetcode刷题记录20">
-                leetcode刷题记录20 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
         </div>
       
+      
 
       
-      
-    </footer>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/07/12/hello-world/" itemprop="url">
+              
+                <span itemprop="name">Hello World</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-07-12T17:24:53+08:00"
+              content="2016-07-12" >
+          07-12
+        </time>
+      </div>
+
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/2016/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2016/">1</a><a class="page-number" href="/archives/2016/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+
 
 
           </div>
@@ -369,10 +285,6 @@ s = “loveleetcode”,return 2.Note: You may assume">
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -392,17 +304,8 @@ s = “loveleetcode”,return 2.Note: You may assume">
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -413,7 +316,7 @@ s = “loveleetcode”,return 2.Note: You may assume">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -465,17 +368,6 @@ s = “loveleetcode”,return 2.Note: You may assume">
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -572,9 +464,11 @@ s = “loveleetcode”,return 2.Note: You may assume">
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
