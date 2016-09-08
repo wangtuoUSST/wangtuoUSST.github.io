@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="Random Rotation EnsemblesKernel Smoothing Methods随手记先进之处：In this paper,we introduce a method that is simple to implement yet general and effective in improving ensemble diversity with only modest impa">
+<meta name="description" content="The Elements of Statistical Learning (6)Model Assessment and Selection随手记之前kaggle比赛的时候最后的排名变动大得惊人。应该不全是选手不注意过拟合过度追求训练数据排名的原因。模型选择出了问题？什么情况有可能出问题？如何做更保险？
+关注点：1.模型选择：估计不同模型的性能，挑选（起码是近似）最优的模型2.模型评估：估计模型在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Random Rotation Ensembles">
-<meta property="og:url" content="http://yoursite.com/2016/08/29/20160826-JMRL-Random-Rotation-Ensembles/index.html">
+<meta property="og:title" content="esl:Model Assessment and Selection">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/20160908-esl/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
-<meta property="og:description" content="Random Rotation EnsemblesKernel Smoothing Methods随手记先进之处：In this paper,we introduce a method that is simple to implement yet general and effective in improving ensemble diversity with only modest impa">
-<meta property="og:updated_time" content="2016-08-29T12:55:05.865Z">
+<meta property="og:description" content="The Elements of Statistical Learning (6)Model Assessment and Selection随手记之前kaggle比赛的时候最后的排名变动大得惊人。应该不全是选手不注意过拟合过度追求训练数据排名的原因。模型选择出了问题？什么情况有可能出问题？如何做更保险？
+关注点：1.模型选择：估计不同模型的性能，挑选（起码是近似）最优的模型2.模型评估：估计模型在">
+<meta property="og:updated_time" content="2016-09-08T11:03:36.176Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Random Rotation Ensembles">
-<meta name="twitter:description" content="Random Rotation EnsemblesKernel Smoothing Methods随手记先进之处：In this paper,we introduce a method that is simple to implement yet general and effective in improving ensemble diversity with only modest impa">
+<meta name="twitter:title" content="esl:Model Assessment and Selection">
+<meta name="twitter:description" content="The Elements of Statistical Learning (6)Model Assessment and Selection随手记之前kaggle比赛的时候最后的排名变动大得惊人。应该不全是选手不注意过拟合过度追求训练数据排名的原因。模型选择出了问题？什么情况有可能出问题？如何做更保险？
+关注点：1.模型选择：估计不同模型的性能，挑选（起码是近似）最优的模型2.模型评估：估计模型在">
 
 
 
@@ -114,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/29/20160826-JMRL-Random-Rotation-Ensembles/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/08/20160908-esl/"/>
 
-  <title> Random Rotation Ensembles | 机器学习及自然语言处理 </title>
+  <title> esl:Model Assessment and Selection | 机器学习及自然语言处理 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +239,7 @@
             
             
               
-                Random Rotation Ensembles
+                esl:Model Assessment and Selection
               
             
           </h1>
@@ -248,8 +251,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-29T20:45:29+08:00" content="2016-08-29">
-              2016-08-29
+            <time itemprop="dateCreated" datetime="2016-09-08T11:25:29+08:00" content="2016-09-08">
+              2016-09-08
             </time>
           </span>
 
@@ -262,8 +265,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ml-JMRL/" itemprop="url" rel="index">
-                    <span itemprop="name">ml JMRL</span>
+                  <a href="/categories/ml/" itemprop="url" rel="index">
+                    <span itemprop="name">ml</span>
                   </a>
                 </span>
 
@@ -295,10 +298,8 @@
       
 
       
-        <h2 id="Random-Rotation-Ensembles"><a href="#Random-Rotation-Ensembles" class="headerlink" title="Random Rotation Ensembles"></a>Random Rotation Ensembles</h2><h3 id="Kernel-Smoothing-Methods"><a href="#Kernel-Smoothing-Methods" class="headerlink" title="Kernel Smoothing Methods"></a>Kernel Smoothing Methods</h3><h4 id="随手记"><a href="#随手记" class="headerlink" title="随手记"></a>随手记</h4><p>先进之处：In this paper,we introduce a method that is simple to implement yet general and effective in improving ensemble diversity with only modest impact on the accuracy of the individual base learners.</p>
-<p>在集成学习中增加集成多样性往往会导致基学习器准确性的下降，而这篇文章提出了通过旋转特征空间，在对准确性影响非常小的情况下提升了多样性，在数据集上的结果显示这一方法的性能已经超过了目前最先进的集成学习方法了。</p>
-<p>引言阐述了：<br>1.集成学习好用，牛逼；<br>2.集成学习的关键在于多样性-准确性权衡，并介绍了几种提升多样性的典型；<br>3.很多集成学习方法要求基学习器必须是决策树。决策树有很多优点，但决策树实质上是一个划分决策空间(decision space)的超矩形(hyper-rectangles)的集合，所以得到的函数是分段的阶梯状，即使组合大量的决策树，在低维可视化的场景下也能明显的观察到这一现象。这导致了为了逼近一个斜的决策边界，需要大量的树。为了突破这一限制， (Garca-Pedrajas et al., 2007)提出了nonlinear boosting projections，为基学习器和oblique random forests提供了不同的非线性数据视图（？？？），(Menze et al., 2011)使用线性判别模型或岭回归来决定树节点上的最优斜分隔方向。 (Rodriguez et al., 2006; Kuncheva and Rodriguez, 2007)则提出了另外一种方法，rotation forests，与本文的方法相关但有所不同，这一方法是在构造下一个预测子之前先抽取特征子集，再做自助采样（估计是为了避免每次旋转的方法都差不多），再做PCA，然后旋转整个特征空间。De Bock and Poel (2011)发现不用PCA用ICA效果最好。<br>4.作者发现没必要刻意去决定旋转方向，随机旋转效果好极了，然后就有了这篇文章。</p>
-<h4 id="Random-Rotations"><a href="#Random-Rotations" class="headerlink" title="Random Rotations"></a>Random Rotations</h4><p>这一节介绍如何构造随机旋转<br>方法1：<br>一个恰当的旋转矩阵$\textit{R}$应当是一个行列式等于1的正交方阵。</p>
+        <h2 id="The-Elements-of-Statistical-Learning-6"><a href="#The-Elements-of-Statistical-Learning-6" class="headerlink" title="The Elements of Statistical Learning (6)"></a>The Elements of Statistical Learning (6)</h2><h3 id="Model-Assessment-and-Selection"><a href="#Model-Assessment-and-Selection" class="headerlink" title="Model Assessment and Selection"></a>Model Assessment and Selection</h3><h4 id="随手记"><a href="#随手记" class="headerlink" title="随手记"></a>随手记</h4><p>之前kaggle比赛的时候最后的排名变动大得惊人。应该不全是选手不注意过拟合过度追求训练数据排名的原因。模型选择出了问题？什么情况有可能出问题？如何做更保险？</p>
+<p>关注点：<br>1.模型选择：估计不同模型的性能，挑选（起码是近似）最优的模型<br>2.模型评估：估计模型在新数据上的预测误差（泛化误差）<br>调节参数的选择应当基于对预测误差的估计</p>
 
       
     </div>
@@ -324,16 +325,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/29/20160830-leetcode /" rel="next" title="leetcode刷题记录22-23">
-                <i class="fa fa-chevron-left"></i> leetcode刷题记录22-23
+              <a href="/2016/09/08/20160908-leetcode/" rel="next" title="leetcode刷题记录24">
+                <i class="fa fa-chevron-left"></i> leetcode刷题记录24
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/02/20160902-esl/" rel="prev" title="esl:Kernel Smoothing Methods">
-                esl:Kernel Smoothing Methods <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/08/20160905-Neurocomputing-ensemble/" rel="prev" title="my paper">
+                my paper <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -402,7 +403,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -410,7 +411,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -461,7 +462,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-Rotation-Ensembles"><span class="nav-number">1.</span> <span class="nav-text">Random Rotation Ensembles</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kernel-Smoothing-Methods"><span class="nav-number">1.1.</span> <span class="nav-text">Kernel Smoothing Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随手记"><span class="nav-number">1.1.1.</span> <span class="nav-text">随手记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Random-Rotations"><span class="nav-number">1.1.2.</span> <span class="nav-text">Random Rotations</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Elements-of-Statistical-Learning-6"><span class="nav-number">1.</span> <span class="nav-text">The Elements of Statistical Learning (6)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Assessment-and-Selection"><span class="nav-number">1.1.</span> <span class="nav-text">Model Assessment and Selection</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随手记"><span class="nav-number">1.1.1.</span> <span class="nav-text">随手记</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

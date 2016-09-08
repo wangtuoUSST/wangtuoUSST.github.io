@@ -84,22 +84,19 @@
 
 
 
-<meta name="description" content="介绍15Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.
-For example,Given nums = [0, 1, 3] return 2.
-Note:Your algorithm should run in l">
+<meta name="description" content="介绍Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You may assume no duplicates in the array.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode刷题记录15">
-<meta property="og:url" content="http://yoursite.com/2016/08/03/20160803-leetcode /index.html">
+<meta property="og:title" content="leetcode刷题记录24">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/20160908-leetcode/index.html">
 <meta property="og:site_name" content="机器学习及自然语言处理">
-<meta property="og:description" content="介绍15Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.
-For example,Given nums = [0, 1, 3] return 2.
-Note:Your algorithm should run in l">
-<meta property="og:updated_time" content="2016-08-05T03:27:24.286Z">
+<meta property="og:description" content="介绍Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You may assume no duplicates in the array.">
+<meta property="og:updated_time" content="2016-09-08T01:57:30.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leetcode刷题记录15">
-<meta name="twitter:description" content="介绍15Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.
-For example,Given nums = [0, 1, 3] return 2.
-Note:Your algorithm should run in l">
+<meta name="twitter:title" content="leetcode刷题记录24">
+<meta name="twitter:description" content="介绍Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You may assume no duplicates in the array.">
 
 
 
@@ -120,9 +117,9 @@ Note:Your algorithm should run in l">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/03/20160803-leetcode /"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/08/20160908-leetcode/"/>
 
-  <title> leetcode刷题记录15 | 机器学习及自然语言处理 </title>
+  <title> leetcode刷题记录24 | 机器学习及自然语言处理 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +239,7 @@ Note:Your algorithm should run in l">
             
             
               
-                leetcode刷题记录15
+                leetcode刷题记录24
               
             
           </h1>
@@ -254,8 +251,8 @@ Note:Your algorithm should run in l">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-03T11:25:29+08:00" content="2016-08-03">
-              2016-08-03
+            <time itemprop="dateCreated" datetime="2016-09-08T10:05:29+08:00" content="2016-09-08">
+              2016-09-08
             </time>
           </span>
 
@@ -301,11 +298,13 @@ Note:Your algorithm should run in l">
       
 
       
-        <h3 id="介绍15"><a href="#介绍15" class="headerlink" title="介绍15"></a>介绍15</h3><p>Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.</p>
-<p>For example,<br>Given nums = [0, 1, 3] return 2.</p>
-<p>Note:<br>Your algorithm should run in linear runtime complexity. Could you implement it using only constant extra space complexity?</p>
-<h3 id="思路15"><a href="#思路15" class="headerlink" title="思路15"></a>思路15</h3><p>等差数列</p>
-<h3 id="代码15"><a href="#代码15" class="headerlink" title="代码15"></a>代码15</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">missingNumber</span><span class="params">(self, nums)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        s=sum(nums)</div><div class="line">        n=max(nums)</div><div class="line">        <span class="keyword">if</span> min(nums)!=<span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">if</span> n*(n+<span class="number">1</span>)/<span class="number">2</span>-s==<span class="number">0</span>:</div><div class="line">                <span class="keyword">return</span> n+<span class="number">1</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">return</span> n*(n+<span class="number">1</span>)/<span class="number">2</span>-s</div></pre></td></tr></table></figure>
+        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+<p>You may assume no duplicates in the array.</p>
+<p>Here are few examples.<br>[1,3,5,6], 5 → 2<br>[1,3,5,6], 2 → 1<br>[1,3,5,6], 7 → 4<br>[1,3,5,6], 0 → 0</p>
+<h3 id="思路1"><a href="#思路1" class="headerlink" title="思路1"></a>思路1</h3><p>暴力解决</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">searchInsert</span><span class="params">(self, nums, target)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :type target: int</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        <span class="keyword">if</span> (nums==[]) <span class="keyword">or</span> (nums[<span class="number">0</span>]&gt;target):</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        <span class="keyword">elif</span> nums[<span class="number">-1</span>]&lt;target:</div><div class="line">            <span class="keyword">return</span> len(nums)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</div><div class="line">                <span class="keyword">if</span> nums[i]==target:</div><div class="line">                    <span class="keyword">return</span> i</div><div class="line">                <span class="keyword">elif</span> (nums[i]&lt;target) <span class="keyword">and</span> (nums[i+<span class="number">1</span>]&gt;target):</div><div class="line">                    <span class="keyword">return</span> i+<span class="number">1</span></div></pre></td></tr></table></figure>
+<h4 id="思路2"><a href="#思路2" class="headerlink" title="思路2"></a>思路2</h4><p>递归</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">searchInsert</span><span class="params">(self, nums, target)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :type target: int</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        <span class="keyword">if</span> (nums==[]) <span class="keyword">or</span> (nums[<span class="number">0</span>]&gt;target):</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        <span class="keyword">elif</span> nums[<span class="number">-1</span>]&lt;target:</div><div class="line">            <span class="keyword">return</span> len(nums)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> Solution.search(self,nums,target,<span class="number">0</span>,len(nums)<span class="number">-1</span>)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self,nums,target,left,right)</span>:</span></div><div class="line">        <span class="keyword">if</span> nums[left]==target:</div><div class="line">            <span class="keyword">return</span> left</div><div class="line">        <span class="keyword">elif</span> nums[right]==target:</div><div class="line">            <span class="keyword">return</span> right</div><div class="line">        <span class="keyword">elif</span> right-left==<span class="number">1</span>:</div><div class="line">            <span class="keyword">return</span> right</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">if</span> nums[(left+right)/<span class="number">2</span>]&lt;=target:</div><div class="line">                <span class="keyword">return</span> self.search(nums,target,(left+right)/<span class="number">2</span>,right)</div><div class="line">            <span class="keyword">elif</span> nums[(left+right)/<span class="number">2</span>]&gt;target:</div><div class="line">                <span class="keyword">return</span> self.search(nums,target,left,(left+right)/<span class="number">2</span>)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -331,16 +330,16 @@ Note:Your algorithm should run in l">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/02/20160802-leetcode/" rel="next" title="leetcode刷题记录13-14">
-                <i class="fa fa-chevron-left"></i> leetcode刷题记录13-14
+              <a href="/2016/09/05/20160905-JMRL-Random-Rotation-Ensembles/" rel="next" title="Random Rotation Ensembles">
+                <i class="fa fa-chevron-left"></i> Random Rotation Ensembles
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/05/20160805-leetcode/" rel="prev" title="leetcode刷题记录16-18">
-                leetcode刷题记录16-18 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/08/20160908-esl/" rel="prev" title="esl:Model Assessment and Selection">
+                esl:Model Assessment and Selection <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -468,7 +467,7 @@ Note:Your algorithm should run in l">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍15"><span class="nav-number">1.</span> <span class="nav-text">介绍15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路15"><span class="nav-number">2.</span> <span class="nav-text">思路15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码15"><span class="nav-number">3.</span> <span class="nav-text">代码15</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路1"><span class="nav-number">2.</span> <span class="nav-text">思路1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路2"><span class="nav-number">3.1.</span> <span class="nav-text">思路2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-1"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
           </div>
         </section>
